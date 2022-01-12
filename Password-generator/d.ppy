@@ -1,0 +1,52 @@
+import string
+import random
+
+
+pass_list = []
+
+def password_generator():
+    pass_list_input = input("what is password for? ")
+    pass_list.append(pass_list_input)
+    print(pass_list)
+    print()
+    length = input("How long do you want your password: ")
+    return int(length)
+
+
+password_characters = string.ascii_letters + string.digits + string.punctuation
+password = []
+password_length = password_generator()
+
+
+for x in range(password_length):
+    password.append(random.choice(password_characters))
+
+print()
+
+final_password = ''.join(password)
+print("password one (" + str(len(final_password)) + "):\t\t" + final_password )
+
+pass_list.append(final_password)
+print(pass_list)
+
+print()
+
+save = input("Do you want to save the password? (yes or no) ")
+
+print()
+
+if save == "yes":
+    print("To copy the password highlight it then right click using your mouse and press copy ")
+
+    print()
+
+    print("Copy Here (" + str(len(final_password)) + "):\t\t" + final_password )
+
+elif save == "no":
+    exit()
+
+print()
+
+add_pass = password_generator()
+pass_list.append(add_pass)
+print(pass_list)
